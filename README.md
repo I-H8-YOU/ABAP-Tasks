@@ -8,4 +8,4 @@
 
 ## Abap Dictionary
 * [Making a tables](https://github.com/I-H8-YOU/TIL/blob/main/ABAP%20Dictionary/%23%20Making%20a%20table.md) 
-* [Inserting a Data Into Tables](https://github.com/I-H8-YOU/TIL/blob/main/ABAP%20Dictionary/%23%20Inserting%20a%20Data%20Into%20Tables.md)
+* [Creating a Entries Into Tables](https://github.com/I-H8-YOU/TIL/blob/main/ABAP%20Dictionary/%23%20Inserting%20a%20Data%20Into%20Tables.md)
