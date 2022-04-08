@@ -33,5 +33,7 @@ Making a Data Table in SE11 (summary)
 1. When there's similar Data type.
 2. When you have to set a Value Ranges.
 
-### Once You're done with setting up the Tables Save & Activate the Table.
+### Once You're done with setting up Before Saving & Activating the Table You should set up Technical Setting.
+![image](https://user-images.githubusercontent.com/103248677/162436442-4ae67168-916c-4030-b637-3bd14aece385.png)
+* After Setting up this. Now Save and Activate the Table.
 
