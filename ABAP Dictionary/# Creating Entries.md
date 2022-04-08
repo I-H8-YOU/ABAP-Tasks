@@ -16,4 +16,4 @@
 * Excute
 
 ![image](https://user-images.githubusercontent.com/103248677/162435301-f316856c-18ca-43a9-9fed-be1bc2b7bdd8.png)
-* It should show you the entries you created 
+* It should show you the entries you have created 
