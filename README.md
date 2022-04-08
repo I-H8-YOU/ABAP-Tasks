@@ -7,4 +7,4 @@
 
 
 ## Abap Dictionary
-* [Making a tables](https://github.com/I-H8-YOU/TIL/blob/main/Abap%20Dictionary/Making%20a%20table) 
+* [Making a tables](https://github.com/I-H8-YOU/TIL/blob/main/ABAP%20Dictionary/%23%20Making%20a%20table.md) 
