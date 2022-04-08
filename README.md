@@ -11,4 +11,4 @@
 * [Creating a Entries Into Tables](https://github.com/I-H8-YOU/TIL/blob/main/ABAP%20Dictionary/%23%20Creating%20Entries.md)
 
 ## Abap oop 
-* [What is OOP?](https://github.com/I-H8-YOU/TIL/blob/main/ABAP%20OOP/What%20is%20OOP%3F)
+* [Class](https://github.com/I-H8-YOU/TIL/blob/main/ABAP%20OOP/What%20is%20OOP%3F)
