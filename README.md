@@ -14,4 +14,4 @@
 * [Class](https://github.com/I-H8-YOU/TIL/blob/main/ABAP%20OOP/Class.md)
 
 ## My Sql
-* [Simple Select](https://github.com/I-H8-YOU/TIL/blob/main/ABAP%20OOP/Class.md)
+* [Data Searching and Grouping](https://github.com/I-H8-YOU/TIL/blob/main/ABAP%20OOP/Class.md)
