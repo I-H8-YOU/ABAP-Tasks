@@ -51,7 +51,7 @@ PARAMETERS : pa_m RADIOBUTTON GROUP ra1 DEFAULT 'X',
              pa_f RADIOBUTTON GROUP ra1.
 
 ```
-* Created a Input Fields with Select-options and with Parameters for the Radiobuttons
+>Created a Input Fields with Select-options and with Parameters for the Radiobuttons
 
 ## 3-2. Defining a Types for the Internal Table
 ```abap
@@ -67,4 +67,42 @@ DATA : gt_grade TYPE TABLE OF t_grade.
 
 ```
 >With 'Types' Statement I have defined a types for Internal table 'gt_grade' 
+
+## 3-3. Selecting a Data 
+
+```abap
+START-OF-SELECTION.
+
+  CASE 'X'.
+    WHEN  pa_m.
+      SELECT a~id a~name a~phone b~class b~grade
+        INTO CORRESPONDING FIELDS OF TABLE gt_grade
+      FROM  zstudent_26 AS a INNER JOIN zstdclass_26 AS b
+        ON a~id = b~id
+       WHERE a~id IN so_id
+       AND  a~name IN so_name
+       AND a~gender = 'M'.
+
+    WHEN  pa_f.
+      SELECT a~id a~name a~phone b~class b~grade
+        INTO CORRESPONDING FIELDS OF TABLE gt_grade
+      FROM  zstudent_26 AS a INNER JOIN zstdclass_26 AS b
+        ON a~id = b~id
+       WHERE a~id IN so_id
+       AND  a~name IN so_name
+       AND a~gender = 'F'.
+
+  ENDCASE.
+Call Screen 100.
+```
+>Using Case, when Statements.. Case 'X'. Bring up the Data When pa_m (Male)'s Button is Activated Check If ID, Name, Gender is Same.. Same goes for when pa_f (Female) is Activated
+
+## 3-4. Creating a Screen 100
+
+![image](https://user-images.githubusercontent.com/103248677/163212161-fd7e93d5-5eef-47b2-83e8-0edbd1f64778.png)
+>Created a Screen 100
+
+![image](https://user-images.githubusercontent.com/103248677/163212532-2ce7f82a-ac88-4d64-a758-095ce6c09a3c.png)
+>Setting up Custom_control Area in Screen Painter
+
 
