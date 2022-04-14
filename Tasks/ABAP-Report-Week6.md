@@ -125,6 +125,8 @@ Call Screen 100.
 ![image](https://user-images.githubusercontent.com/103248677/163388416-26813de0-03c1-47ef-9047-1df13d09ef37.png)
 > On Screen 100's Element list input OK_CODE on the Fields
 
-
-
+```abap
+DATA : ok_code TYPE sy-ucomm.
+```
+> Add this line to make sure OK_CODE Works
 
