@@ -105,4 +105,26 @@ Call Screen 100.
 ![image](https://user-images.githubusercontent.com/103248677/163212532-2ce7f82a-ac88-4d64-a758-095ce6c09a3c.png)
 >Setting up Custom_control Area in Screen Painter
 
+## 3-5. Creating OK_CODE
+
+![image](https://user-images.githubusercontent.com/103248677/163387550-5b69e1bb-1006-4708-a4f0-f5725f183ac9.png)
+> On PAI create a User_command_0100 Module
+
+![image](https://user-images.githubusercontent.com/103248677/163387767-5a9a08c5-f1b8-4dd3-84b3-d53529c87d5a.png)
+> Using Case Statement for OK_CODE
+
+![image](https://user-images.githubusercontent.com/103248677/163388027-076d0928-4b29-4f8d-8893-ab7dde6e5232.png)
+> On PBO's status_0100 Module I created Gui Status and Gui Title
+
+![image](https://user-images.githubusercontent.com/103248677/163388310-75f65da7-fc33-4647-ace9-e309b73c54fd.png)
+> Gui Status
+
+![image](https://user-images.githubusercontent.com/103248677/163388366-4d5a13e4-9352-43ed-a6dc-69fedd4bd1e7.png)
+> Gui Title 
+
+![image](https://user-images.githubusercontent.com/103248677/163388416-26813de0-03c1-47ef-9047-1df13d09ef37.png)
+> On Screen 100's Element list input OK_CODE on the Fields
+
+
+
 
