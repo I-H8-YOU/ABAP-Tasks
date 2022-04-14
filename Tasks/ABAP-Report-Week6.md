@@ -245,6 +245,15 @@ ENDIF.
 >By using Patterns you can easily Call method, classes and Creating Objects..
 
 
+# 4. Results
 
+![image](https://user-images.githubusercontent.com/103248677/163392707-89913445-797b-45ef-8b5f-36e09c7bf899.png)
+>Selection-Screen
+
+![image](https://user-images.githubusercontent.com/103248677/163393248-80f1a4ea-f122-4519-b917-bd45dda5d6f3.png)
+>When Male
+
+![image](https://user-images.githubusercontent.com/103248677/163393434-1634d4a8-c668-4c16-80b8-9490d5c086f6.png)
+>When Female
 
 
