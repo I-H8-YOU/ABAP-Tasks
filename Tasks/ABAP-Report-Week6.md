@@ -107,13 +107,36 @@ Call Screen 100.
 
 ## 3-5. Creating OK_CODE
 
-![image](https://user-images.githubusercontent.com/103248677/163387550-5b69e1bb-1006-4708-a4f0-f5725f183ac9.png)
+```abap
+PROCESS AFTER INPUT.
+ MODULE USER_COMMAND_0100.
+```
 > On PAI create a User_command_0100 Module
 
-![image](https://user-images.githubusercontent.com/103248677/163387767-5a9a08c5-f1b8-4dd3-84b3-d53529c87d5a.png)
+```abap
+MODULE user_command_0100 INPUT.
+
+case ok_code.
+  when 'BACK'.
+    LEAVE TO SCREEN 0.
+
+    WHEN 'CANC'.
+      LEAVE TO SCREEN 0.
+
+      WHEN 'EXIT'.
+        LEAVE PROGRAM.
+ENDCASE.
+
+ENDMODULE.
+```
 > Using Case Statement for OK_CODE
 
-![image](https://user-images.githubusercontent.com/103248677/163388027-076d0928-4b29-4f8d-8893-ab7dde6e5232.png)
+```abap
+MODULE status_0100 OUTPUT.
+ SET PF-STATUS 'S100'.
+ SET TITLEBAR 'T100'.
+ENDMODULE.
+```
 > On PBO's status_0100 Module I created Gui Status and Gui Title
 
 ![image](https://user-images.githubusercontent.com/103248677/163388310-75f65da7-fc33-4647-ace9-e309b73c54fd.png)
@@ -129,4 +152,99 @@ Call Screen 100.
 DATA : ok_code TYPE sy-ucomm.
 ```
 > Add this line to make sure OK_CODE Works
+
+## 3-6. Creating ALV with Pattern Feature
+
+```abap
+DATA : go_container TYPE REF TO cl_gui_custom_container.
+DATA : go_alv TYPE REF TO cl_gui_alv_grid.
+```
+>Defining Go_container and Go_alv
+
+```abap
+CREATE OBJECT go_container
+  EXPORTING
+*    parent                      =
+    container_name              = 'CUSTOM_CONTROL'
+*    style                       =
+*    lifetime                    = lifetime_default
+*    repid                       =
+*    dynnr                       =
+*    no_autodef_progid_dynnr     =
+  EXCEPTIONS
+    cntl_error                  = 1
+    cntl_system_error           = 2
+    create_error                = 3
+    lifetime_error              = 4
+    lifetime_dynpro_dynpro_link = 5
+    others                      = 6
+    .
+IF sy-subrc <> 0.
+* MESSAGE ID SY-MSGID TYPE SY-MSGTY NUMBER SY-MSGNO
+*            WITH SY-MSGV1 SY-MSGV2 SY-MSGV3 SY-MSGV4.
+ENDIF.
+
+
+
+
+CREATE OBJECT go_alv
+  EXPORTING
+*    i_shellstyle      = 0
+*    i_lifetime        =
+    i_parent          = go_container
+*    i_appl_events     = space
+*    i_parentdbg       =
+*    i_applogparent    =
+*    i_graphicsparent  =
+*    i_name            =
+*    i_fcat_complete   = SPACE
+*  EXCEPTIONS
+*    error_cntl_create = 1
+*    error_cntl_init   = 2
+*    error_cntl_link   = 3
+*    error_dp_create   = 4
+*    others            = 5
+    .
+IF sy-subrc <> 0.
+* MESSAGE ID SY-MSGID TYPE SY-MSGTY NUMBER SY-MSGNO
+*            WITH SY-MSGV1 SY-MSGV2 SY-MSGV3 SY-MSGV4.
+ENDIF.
+
+CALL METHOD go_alv->set_table_for_first_display
+ EXPORTING
+*    i_buffer_active               =
+*    i_bypassing_buffer            =
+*    i_consistency_check           =
+    i_structure_name              = 'ZSCLASS_26_1'
+*    is_variant                    =
+*    i_save                        =
+    i_default                     = 'X'
+*    is_layout                     =
+*    is_print                      =
+*    it_special_groups             =
+*    it_toolbar_excluding          =
+*    it_hyperlink                  =
+*    it_alv_graphics               =
+*    it_except_qinfo               =
+*    ir_salv_adapter               =
+  CHANGING
+    it_outtab                     = gt_grade
+*    it_fieldcatalog               =
+*    it_sort                       =
+*    it_filter                     =
+*  EXCEPTIONS
+*    invalid_parameter_combination = 1
+*    program_error                 = 2
+*    too_many_lines                = 3
+*    others                        = 4
+        .
+IF sy-subrc <> 0.
+* Implement suitable error handling here
+ENDIF.
+```
+>By using Patterns you can easily Call method, classes and Creating Objects..
+
+
+
+
 
