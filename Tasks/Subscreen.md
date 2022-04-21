@@ -1,0 +1,123 @@
+```abap
+TABLES : SCARR, SFLIGHT, SPFLI.
+
+DATA: gt_tab1 TYPE TABLE OF scarr,
+      gs_tab1 TYPE scarr.
+
+DATA: gt_tab2 TYPE TABLE OF sflight,
+      gs_tab2 TYPE sflight.
+
+DATA: gt_tab3 TYPE TABLE OF spfli,
+      gs_tab3 TYPE spfli.
+
+
+
+SELECTION-SCREEN BEGIN OF SCREEN 101 AS SUBSCREEN.
+
+PARAMETERS : PA_CAR LIKE SCARR-CARRID.
+
+SELECTION-SCREEN END OF SCREEN 101.
+
+SELECTION-SCREEN BEGIN OF SCREEN 102 AS SUBSCREEN.
+
+SELECT-OPTIONS : SO_CAR2 FOR SFLIGHT-CARRID,
+SO_CON2 FOR SFLIGHT-CONNID,
+SO_DATE2 FOR SFLIGHT-FLDATE.
+
+SELECTION-SCREEN END OF SCREEN 102.
+
+SELECTION-SCREEN BEGIN OF SCREEN 103 AS SUBSCREEN.
+
+SELECT-OPTIONS : SO_CAR3 FOR SPFLI-CARRID,
+SO_CON3 FOR SPFLI-CONNID.
+
+SELECTION-SCREEN END OF SCREEN 103.
+
+
+SELECTION-SCREEN BEGIN OF TABBED BLOCK TAB FOR 3 LINES.
+
+SELECTION-SCREEN TAB (20) TAB1 USER-COMMAND COMM1 DEFAULT SCREEN 101.
+SELECTION-SCREEN TAB (20) TAB2 USER-COMMAND COMM2 DEFAULT SCREEN 102.
+SELECTION-SCREEN TAB (20) TAB3 USER-COMMAND COMM3 DEFAULT SCREEN 103.
+
+SELECTION-SCREEN END OF BLOCK TAB.
+
+INITIALIZATION.
+
+  TAB1 = TEXT-001.
+  TAB2 = TEXT-002.
+  TAB3 = TEXT-003.
+
+  TAB-DYNNR = 102.
+  TAB-ACTIVETAB = 'COMM2'.
+
+START-OF-SELECTION.
+  PERFORM GET_DATA.
+  PERFORM DISPLAY_DATA.
+  end-of-SELECTION.
+
+FORM get_data .
+
+  CASE tab-activetab.
+
+    WHEN 'COMM1'.
+
+      SELECT *
+        FROM scarr
+        INTO CORRESPONDING FIELDS OF TABLE gt_tab1
+        WHERE carrid = pa_car.
+
+    WHEN 'COMM2'.
+
+      SELECT *
+        FROM sflight
+        INTO CORRESPONDING FIELDS OF TABLE gt_tab2
+        WHERE carrid IN so_car2
+          AND connid IN so_con2
+          AND fldate IN so_date2.
+
+    WHEN 'COMM3'.
+
+      SELECT *
+        FROM spfli
+        INTO CORRESPONDING FIELDS OF TABLE gt_tab3
+        WHERE carrid IN so_car3
+          AND connid IN so_con3.
+
+  ENDCASE.
+
+ENDFORM.
+
+
+FORM display_data .
+
+  CASE tab-activetab.
+
+    WHEN 'COMM1'.
+
+      LOOP AT gt_tab1 INTO gs_tab1.
+
+        WRITE:/ gs_tab1-carrid, gs_tab1-carrname, gs_tab1-currcode.
+
+      ENDLOOP.
+
+    WHEN 'COMM2'.
+
+      LOOP AT gt_tab2 INTO gs_tab2.
+
+        WRITE:/ gs_tab2-carrid, gs_tab2-connid, gs_tab2-fldate.
+
+      ENDLOOP.
+
+    WHEN 'COMM3'.
+
+      LOOP AT gt_tab3 INTO gs_tab3.
+
+        WRITE:/ gs_tab3-carrid, gs_tab3-connid, gs_tab3-cityfrom, gs_tab3-cityto.
+
+      ENDLOOP.
+
+  ENDCASE.
+
+ENDFORM.
+```
