@@ -444,3 +444,6 @@ FORM set_fcat.
   CLEAR gs_fieldcat.
 ENDFORM.
 ```
+
+# 7. Result
+![blur](https://user-images.githubusercontent.com/103248677/166887275-f17d4078-7ccb-4904-97c0-968ed84c4d84.png)
