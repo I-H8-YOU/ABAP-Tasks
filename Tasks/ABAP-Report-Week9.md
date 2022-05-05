@@ -1,6 +1,6 @@
 # ABAP Report Programming Week9 Task
 
-> [한국어](ABAP-Report-Week9-kr.md)
+> [한국어](ABAP-Report-week9-kr.md)
 >  &nbsp;·&nbsp;
 > [**English**](ABAP-Report-Week9.md)
 
