@@ -161,7 +161,7 @@ ENDFORM.
 * Implement suitable error handling here
     ENDIF.
 ```
-# 6. 전체적인 코
+# 6. 전체적인 코드
 ```abap
 REPORT zalv_week9_26_3.
 TABLES: zstudent_26_1, zstdclass_26_1, zsubject_26_1, zprof_26_1.
