@@ -88,7 +88,7 @@ DATA: go_table TYPE REF TO cl_salv_table,
            t_table = gt_salv ).
 
 
-        go_table->set_screen_popup(
+        go_table->set_screen_popup(     " Adjusting size of pop up window
             start_column = 1
             end_column   = 50
             start_line   = 1
