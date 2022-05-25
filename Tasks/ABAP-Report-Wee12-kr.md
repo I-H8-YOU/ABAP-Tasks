@@ -11,4 +11,6 @@ ALV 로 조회되도록 구현![aa1](https://user-images.githubusercontent.com/1
 
 
 
-# 1. 필드 수정 ( Types 구문과 ALV design을 위한 Data 선언)
+# 1. 구조체 추가 선언 ( Types 구문 활용)
+
+
