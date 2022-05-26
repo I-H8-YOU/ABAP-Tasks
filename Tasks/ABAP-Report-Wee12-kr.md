@@ -105,3 +105,37 @@ clear gt_salv.
     ENDCASE.
   ENDMETHOD.
 ```
+> Factory에서 출력할 데이터와 SALV 팝업 형태를 조정해 주었고 display 메소드를 통해 리스트가 조회되도록 하였습니다
+
+# 3. Set Handler
+
+```abap
+    SET HANDLER: lcl_handler=>on_dobule FOR go_alv,
+                 lcl_handler=>top_print    FOR go_alv,
+                 lcl_handler=>on_toolbar   FOR go_alv,
+              lcl_handler=>on_user_command FOR go_alv.
+```
+> Set handler를 통해 이벤트 연결 해주었습니다
+
+# 4. 결과
+
+![aa1](https://user-images.githubusercontent.com/103248677/170183032-73d09d97-c48c-416f-b197-162be4c7006d.png)
+
+# 5. ALV 메소드
+
+## 1. get_current_cell
+
+▪ALV GRID 컨트롤에 커서가 놓은 위치의 값과 속성들을 반환.
+
+## 2. get_selected_columns
+
+▪선택된 컬럼들의 정보를 LVC_T_COL 테이블로 반환.
+
+## 3. get_selected_cells
+
+▪현재 선택된 여러개의 셀 정보를 LVC_T_CELL 타입의 테이블로 반환. 
+
+## 4. get_seleted_rows
+
+▪선택된 여러 라인의 정보를 LVC_T_ROW 타입의 테이블로 반환.
+
